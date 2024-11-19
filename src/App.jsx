@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import EventsPage from "../pages/EventsPage.jsx";
 import NotFound from "../pages/NotFound.jsx";
@@ -8,12 +9,17 @@ import FlightsPage from "../pages/FlightsPage.jsx";
 import HotelsPage from "../pages/HotelsPage.jsx";
 
 function App() {
+  const [newEvent, setNewEvent] = useState({});
+
   return (
     <>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<EventsPage />} />
+        <Route
+          path="/"
+          element={<EventsPage newEvent={newEvent} setNewEvent={setNewEvent} />}
+        />
         <Route path="/flights" element={<FlightsPage />} />
         <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/trips" element={<TripsPage />} />
