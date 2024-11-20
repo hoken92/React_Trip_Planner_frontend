@@ -10,6 +10,7 @@ import HotelsPage from "../pages/HotelsPage.jsx";
 
 function App() {
   const [newEvent, setNewEvent] = useState({});
+  const [newFlight, setNewFlight] = useState({});
 
   return (
     <>
@@ -20,7 +21,16 @@ function App() {
           path="/"
           element={<EventsPage newEvent={newEvent} setNewEvent={setNewEvent} />}
         />
-        <Route path="/flights" element={<FlightsPage />} />
+        <Route
+          path="/flights"
+          element={
+            <FlightsPage
+              newEvent={newEvent}
+              setNewFlight={setNewFlight}
+              newFlight={newFlight}
+            />
+          }
+        />
         <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/trips" element={<TripsPage />} />
 
