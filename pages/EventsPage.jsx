@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 export default function EventsPage({ newEvent, setNewEvent }) {
   // useState for Static events from DB
@@ -49,8 +50,8 @@ export default function EventsPage({ newEvent, setNewEvent }) {
         ...newEvent,
         originLocationCode: "LAX",
         destinationLocationCode: selectedEvent[0].location.cityCode,
-        departureDate: selectedEvent[0].event_date.start,
-        returnDate: selectedEvent[0].event_date.end,
+        departureDate: format(selectedEvent[0].event_date.start, "yyyy-MM-dd"),
+        returnDate: format(selectedEvent[0].event_date.end, "yyyy-MM-dd"),
         adults: 1,
       });
       navigate("/flights");
