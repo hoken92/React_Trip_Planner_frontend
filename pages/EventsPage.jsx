@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function EventsPage({ setNewEvent }) {
+export default function EventsPage({ newEvent, setNewEvent }) {
   // useState for Static events from DB
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState("");
@@ -45,7 +45,14 @@ export default function EventsPage({ setNewEvent }) {
 
     if (selectedEvent) {
       console.log(selectedEvent);
-      setNewEvent(selectedEvent);
+      setNewEvent({
+        ...newEvent,
+        originLocationCode: "LAX",
+        destinationLocationCode: selectedEvent[0].location.cityCode,
+        departureDate: selectedEvent[0].event_date.start,
+        returnDate: selectedEvent[0].event_date.end,
+        adults: 1,
+      });
       navigate("/flights");
     }
   }
