@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-export default function DepartingFlightitem({
+export default function DepartingFlightItem({
   loading,
   flights,
   selectFlight,

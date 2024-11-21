@@ -17,7 +17,7 @@ export default function EventsPage({ newEvent, setNewEvent }) {
     const getEvents = async () => {
       const res = await axios.get("http://localhost:3000/api/events");
       console.log(res.data);
-      setEvents(res.data);
+      setEvents(...events, res.data);
     };
     getEvents();
   }, []);

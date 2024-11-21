@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Flightheader from "../components/FlightHeader.jsx";
-import DepartingFlightitem from "../components/DepartingFlightitem.jsx";
+import DepartingFlightItem from "../components/DepartingFlightItem.jsx";
 import Pagination from "../components/Pagination.jsx";
 
 export default function DepartFlightsPage({
@@ -20,13 +20,16 @@ export default function DepartFlightsPage({
 
   useEffect(() => {
     setLoading(true);
-    console.log(newEvent);
+    const getFlights = async () => {
+      const res = await axios.get(
+        `http://localhost:3000/api/flights?originLocationCode=${newEvent.originLocationCode}&destinationLocationCode=${newEvent.destinationLocationCode}&departureDate=${newEvent.departureDate}&returnDate=${newEvent.returnDate}&adults=${newEvent.adults}`
+      );
+      setFlights(res.data);
+      console.log(flights);
+    };
+    getFlights();
     setLoading(false);
-  }, []);
-
-  // async () => {
-  //   const res = await axios.get(`http://localhost:3000/api/flights?originLocationCode=${newEvent.originLocationCode}&destinationLocationCode=${newEvent.destinationLocationCode}&departureDate=${departureDate}&returnDate=${returnDate}&adults=${newEvent.adults}`)
-  // }
+  }, [newEvent]);
 
   // Set Paginated pages
   const indexOfLastFlight = currentPage * flightsPerPage;
@@ -45,7 +48,7 @@ export default function DepartFlightsPage({
     <>
       <h1>Departing Flights</h1>
       <Flightheader newEvent={newEvent} />
-      <DepartingFlightitem
+      <DepartingFlightItem
         loading={loading}
         flights={currentFlights}
         selectFlight={selectFlight}

@@ -8,11 +8,10 @@ import TripsPage from "../pages/TripsPage.jsx";
 import DepartFlightsPage from "../pages/DepartFlightsPage.jsx";
 import ReturnFlightsPage from "../pages/ReturnFlightsPage.jsx";
 import HotelsPage from "../pages/HotelsPage.jsx";
-import { flightdata } from "../data/flights.js";
 
 function App() {
   const [newEvent, setNewEvent] = useState({});
-  const [flights, setFlights] = useState(flightdata);
+  const [flights, setFlights] = useState([]);
   const [newDepartingFlight, setNewDepartingFlight] = useState({});
   const [newReturningFlight, setnewReturningFlight] = useState({});
 
