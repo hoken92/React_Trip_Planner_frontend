@@ -54,7 +54,7 @@ export default function EventsPage({ newEvent, setNewEvent }) {
         returnDate: format(selectedEvent[0].event_date.end, "yyyy-MM-dd"),
         adults: 1,
       });
-      navigate("/flights");
+      navigate("/departingflights");
     }
   }
 

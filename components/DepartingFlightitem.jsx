@@ -1,10 +1,9 @@
 import { format } from "date-fns";
 
-export default function Flightitem({
+export default function DepartingFlightitem({
   loading,
   flights,
-  departFlight,
-  setDepartFlight,
+  selectFlight,
 }) {
   if (loading) {
     return <h2>Loading...</h2>;
@@ -28,15 +27,21 @@ export default function Flightitem({
               </p>
               <p>
                 <b>Depart Time:</b>{" "}
-                {flight.itineraries[0].segments[0].departure.at} -
-                <b>Arrival Time:</b>{" "}
-                {flight.itineraries[0].segments[0].arrival.at}
+                {format(
+                  flight.itineraries[0].segments[0].departure.at,
+                  "yyyy/MM//dd p"
+                )}{" "}
+                -<b>Arrival Time:</b>{" "}
+                {format(
+                  flight.itineraries[0].segments[0].arrival.at,
+                  "yyyy/MM//dd p"
+                )}
               </p>
             </div>
             <div>
               <p>Price: ${flight.price.total}</p>
             </div>
-            <button>Select</button>
+            <button onClick={() => selectFlight(flight)}>Select</button>
           </div>
         );
       })}

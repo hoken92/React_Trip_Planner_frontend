@@ -5,12 +5,16 @@ import EventsPage from "../pages/EventsPage.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Navbar from "../components/Navbar.jsx";
 import TripsPage from "../pages/TripsPage.jsx";
-import FlightsPage from "../pages/FlightsPage.jsx";
+import DepartFlightsPage from "../pages/DepartFlightsPage.jsx";
+import ReturnFlightsPage from "../pages/ReturnFlightsPage.jsx";
 import HotelsPage from "../pages/HotelsPage.jsx";
+import { flightdata } from "../data/flights.js";
 
 function App() {
   const [newEvent, setNewEvent] = useState({});
-  const [newFlight, setNewFlight] = useState({});
+  const [flights, setFlights] = useState(flightdata);
+  const [newDepartingFlight, setNewDepartingFlight] = useState({});
+  const [newReturningFlight, setnewReturningFlight] = useState({});
 
   return (
     <>
@@ -22,12 +26,25 @@ function App() {
           element={<EventsPage newEvent={newEvent} setNewEvent={setNewEvent} />}
         />
         <Route
-          path="/flights"
+          path="/departingflights"
           element={
-            <FlightsPage
+            <DepartFlightsPage
               newEvent={newEvent}
-              setNewFlight={setNewFlight}
-              newFlight={newFlight}
+              flights={flights}
+              setFlights={setFlights}
+              setNewDepartingFlight={setNewDepartingFlight}
+              newDepartingFlight={newDepartingFlight}
+            />
+          }
+        />
+        <Route
+          path="/returningflights"
+          element={
+            <ReturnFlightsPage
+              newEvent={newEvent}
+              flights={flights}
+              newReturningFlight={newReturningFlight}
+              setnewReturningFlight={setnewReturningFlight}
             />
           }
         />
