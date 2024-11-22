@@ -1,14 +1,14 @@
 import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import EventsPage from "../pages/EventsPage.jsx";
-import NotFound from "../pages/NotFound.jsx";
-import Navbar from "../components/Navbar.jsx";
-import TripsPage from "../pages/TripsPage.jsx";
-import DepartFlightsPage from "../pages/DepartFlightsPage.jsx";
-import ReturnFlightsPage from "../pages/ReturnFlightsPage.jsx";
-import Confirmation from "../pages/Confirmation.jsx";
-import EditTripPage from "../pages/EditTripPage.jsx";
+import EventsPage from "./pages/EventsPage.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import Navbar from "./components/Navbar.jsx";
+import TripsPage from "./pages/TripsPage.jsx";
+import DepartFlightsPage from "./pages/DepartFlightsPage.jsx";
+import ReturnFlightsPage from "./pages/ReturnFlightsPage.jsx";
+import Confirmation from "./pages/Confirmation.jsx";
+import EditTripPage from "./pages/EditTripPage.jsx";
 import { flightdata } from "../data/flights.js";
 
 function App() {

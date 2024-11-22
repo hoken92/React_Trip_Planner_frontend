@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 export default function ReturnFlightsPage({
   flightRequestData,
   flights,
-  newReturningFlight,
   setnewReturningFlight,
 }) {
   const [currentPage, setCurrentPage] = useState(1);
