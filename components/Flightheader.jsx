@@ -1,11 +1,12 @@
-export default function Flightheader({ newEvent }) {
+export default function Flightheader({ flightRequestData }) {
   return (
     <div>
       <h2>
-        {newEvent.originLocationCode} to {newEvent.destinationLocationCode}
+        {flightRequestData.originLocationCode} to{" "}
+        {flightRequestData.destinationLocationCode}
       </h2>
       <h2>
-        {newEvent.departureDate} to {newEvent.returnDate}
+        {flightRequestData.departureDate} to {flightRequestData.returnDate}
       </h2>
     </div>
   );

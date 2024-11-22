@@ -24,7 +24,7 @@ export default function DepartFlightsPage({
       const res = await axios.get(
         `http://localhost:3000/api/flights?originLocationCode=${flightRequestData.originLocationCode}&destinationLocationCode=${flightRequestData.destinationLocationCode}&departureDate=${flightRequestData.departureDate}&returnDate=${flightRequestData.returnDate}&adults=${flightRequestData.adults}`
       );
-      setFlights(res.data);
+      setFlights(...flights, res.data);
     };
     // getFlights();
     setLoading(false);
@@ -39,7 +39,7 @@ export default function DepartFlightsPage({
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const selectFlight = function (flight) {
-    setNewDepartingFlight({ ...newDepartingFlight, flight });
+    setNewDepartingFlight(flight);
     navigate("/returningflights");
   };
 

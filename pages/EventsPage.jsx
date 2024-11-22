@@ -11,7 +11,6 @@ export default function EventsPage({
 }) {
   // useState for Static events from DB
   const [events, setEvents] = useState([]);
-
   const [isSelected, setIsSelected] = useState(false);
 
   // creates the useNavigate function
@@ -34,7 +33,6 @@ export default function EventsPage({
         return event;
       }
     });
-    console.log(selection);
     setSelectedEvent(selection);
 
     // If selectedEvent has an object, change the isSelected to true
