@@ -6,12 +6,17 @@ export default function Pagination({ flightsPerPage, totalFlights, paginate }) {
   }
 
   return (
-    <nav>
-      <ul>
+    <nav id="page-nav">
+      <ul className="pagination justify-content-center">
         {pageNumbers.map((number) => {
           return (
-            <li key={number}>
-              <a onClick={() => paginate(number)}>{number}</a>
+            <li key={number} className="page-item">
+              <a
+                onClick={() => paginate(number)}
+                className="page-link page-item"
+              >
+                {number}
+              </a>
             </li>
           );
         })}
