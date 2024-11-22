@@ -20,7 +20,6 @@ export default function EventsPage({
   useEffect(() => {
     const getEvents = async () => {
       const res = await axios.get("http://localhost:3000/api/events");
-      console.log(res.data);
       setEvents(...events, res.data);
     };
     getEvents();
@@ -48,7 +47,6 @@ export default function EventsPage({
     e.preventDefault();
 
     if (selectedEvent) {
-      console.log(selectedEvent);
       setFlightRequestData({
         ...flightRequestData,
         originLocationCode: "LAX",

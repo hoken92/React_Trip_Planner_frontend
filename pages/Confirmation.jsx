@@ -1,11 +1,14 @@
 import { format } from "date-fns";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Confirmation({
   selectedEvent,
   newDepartingFlight,
   newReturningFlight,
 }) {
+  const navigate = useNavigate();
+
   if (!selectedEvent) {
     return <h3>Please try again</h3>;
   }
@@ -16,8 +19,8 @@ export default function Confirmation({
     event_info: {
       name: selectedEvent[0].event_name,
       location: selectedEvent[0].location.city,
-      event_start_date: selectedEvent[0].event_date.start,
-      event_end_date: selectedEvent[0].event_date.end,
+      start_date: format(selectedEvent[0].event_date.start, "yyyy-MM-dd"),
+      end_date: format(selectedEvent[0].event_date.end, "yyyy-MM-dd"),
     },
     depart_flight_info: {
       origin: newDepartingFlight.itineraries[0].segments[0].departure.iataCode,
@@ -41,10 +44,20 @@ export default function Confirmation({
 
   // Post request to the backend
   // Handle submit
-  function handleSubmit() {}
+  async function handleSubmit() {
+    try {
+      await axios.post("http://localhost:3000/api/trips", requestBody);
+
+      navigate("/trips");
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   // Handle Cancel
-  function handleCancel() {}
+  function handleCancel() {
+    navigate("/");
+  }
 
   return (
     <>
@@ -53,53 +66,62 @@ export default function Confirmation({
       {requestBody ? (
         <div>
           <div>
-            <h2>Name:</h2>
-            <p>{requestBody.name}</p>
-          </div>
-          <div>
-            <h2>Event:</h2>
+            <h3>Event:</h3>
             <p>{requestBody.event_info.name}</p>
             <p>Location: {requestBody.event_info.location}</p>
             <p>Dates:</p>
             <p>
-              {format(requestBody.event_info.event_start_date, "yyyy/MM/dd")} to{" "}
-              {format(requestBody.event_info.event_end_date, "yyyy/MM/dd")}
+              {format(requestBody.event_info.start_date, "yyyy/MM/dd")} to{" "}
+              {format(requestBody.event_info.end_date, "yyyy/MM/dd")}
             </p>
           </div>
           <div>
-            <h2>Departing Flight:</h2>
+            <h3>Departing Flight:</h3>
             <p>
               {requestBody.depart_flight_info.origin} to{" "}
               {requestBody.depart_flight_info.destination}
             </p>
             <p>
+              Depart Time:{" "}
               {format(
                 requestBody.depart_flight_info.departureDate,
-                "yyyy/MM/dd"
-              )}{" "}
-              to{" "}
-              {format(requestBody.depart_flight_info.arriveDate, "yyyy/MM/dd")}
+                "yyyy/MM/dd p"
+              )}
+            </p>
+            <p>
+              Arrival Time:{" "}
+              {format(
+                requestBody.depart_flight_info.arriveDate,
+                "yyyy/MM/dd p"
+              )}
             </p>
             <p>{requestBody.depart_flight_info.duration}</p>
           </div>
           <div>
-            <h2>Returning Flight:</h2>
+            <h3>Returning Flight:</h3>
             <p>
               {requestBody.return_flight_info.origin} to{" "}
               {requestBody.return_flight_info.destination}
             </p>
             <p>
+              Depart Time:{" "}
               {format(
                 requestBody.return_flight_info.departureDate,
-                "yyyy/MM/dd"
-              )}{" "}
-              to{" "}
-              {format(requestBody.return_flight_info.arriveDate, "yyyy/MM/dd")}
+                "yyyy/MM/dd p"
+              )}
+            </p>
+            <p>
+              Arrival Time:{" "}
+              {format(
+                requestBody.return_flight_info.arriveDate,
+                "yyyy/MM/dd p"
+              )}
             </p>
             <p>{requestBody.return_flight_info.duration}</p>
           </div>
           <div>
-            <h3>{requestBody.depart_flight_info.price}</h3>
+            <h3>Price:</h3>
+            <p>{requestBody.depart_flight_info.price}</p>
           </div>
           <button id="cancelBtn" onClick={handleCancel}>
             Cancel

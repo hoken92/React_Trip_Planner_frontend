@@ -16,6 +16,7 @@ function App() {
   const [flights, setFlights] = useState(flightdata);
   const [newDepartingFlight, setNewDepartingFlight] = useState({});
   const [newReturningFlight, setnewReturningFlight] = useState({});
+  const [trip, setTrip] = useState(null);
 
   return (
     <>
@@ -66,7 +67,7 @@ function App() {
             />
           }
         />
-        <Route path="/trips" element={<TripsPage />} />
+        <Route path="/trips" element={<TripsPage setTrip={setTrip} />} />
 
         <Route path="/*" element={<NotFound />} />
       </Routes>
