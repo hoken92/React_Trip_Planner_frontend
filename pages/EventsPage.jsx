@@ -3,10 +3,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 
-export default function EventsPage({ newEvent, setNewEvent }) {
+export default function EventsPage({
+  selectedEvent,
+  setSelectedEvent,
+  flightRequestData,
+  setFlightRequestData,
+}) {
   // useState for Static events from DB
   const [events, setEvents] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState("");
+
   const [isSelected, setIsSelected] = useState(false);
 
   // creates the useNavigate function
@@ -46,8 +51,8 @@ export default function EventsPage({ newEvent, setNewEvent }) {
 
     if (selectedEvent) {
       console.log(selectedEvent);
-      setNewEvent({
-        ...newEvent,
+      setFlightRequestData({
+        ...flightRequestData,
         originLocationCode: "LAX",
         destinationLocationCode: selectedEvent[0].location.cityCode,
         departureDate: format(selectedEvent[0].event_date.start, "yyyy-MM-dd"),

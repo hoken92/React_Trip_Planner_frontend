@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-export default function ReturningFlightitem({ flights, selectFlight }) {
+export default function ReturningFlightitem({ flights, submitTrip }) {
   return (
     <div>
       {flights.map((flight) => {
@@ -33,7 +33,7 @@ export default function ReturningFlightitem({ flights, selectFlight }) {
             <div>
               <p>Price: ${flight.price.total}</p>
             </div>
-            <button onClick={() => selectFlight(flight)}>Select</button>
+            <button onClick={() => submitTrip(flight)}>Select</button>
           </div>
         );
       })}
