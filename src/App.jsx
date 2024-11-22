@@ -8,6 +8,7 @@ import TripsPage from "../pages/TripsPage.jsx";
 import DepartFlightsPage from "../pages/DepartFlightsPage.jsx";
 import ReturnFlightsPage from "../pages/ReturnFlightsPage.jsx";
 import Confirmation from "../pages/Confirmation.jsx";
+import EditTripPage from "../pages/EditTripPage.jsx";
 import { flightdata } from "../data/flights.js";
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
           }
         />
         <Route path="/trips" element={<TripsPage setTrip={setTrip} />} />
+        <Route path="/edit-trip" element={<EditTripPage trip={trip} />} />
 
         <Route path="/*" element={<NotFound />} />
       </Routes>

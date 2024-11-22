@@ -1,17 +1,17 @@
 import { format } from "date-fns";
 
-export default function TripItem({ trip, handleDelete }) {
+export default function TripItem({ trip, handleEdit, handleDelete }) {
   return (
     <div key={trip._id}>
       <div className="tripHeader">
-        <h3>{trip.event_info.name}</h3>
+        <h3>{trip.name}</h3>
         <h3>Departing Flight</h3>
         <h3>Returning Flight</h3>
         <h3>
           {format(trip.event_info.start_date, "yyyy/MM/dd")} -{" "}
           {format(trip.event_info.end_date, "yyyy/MM/dd")}
         </h3>
-        <button>Edit</button>
+        <button onClick={() => handleEdit(trip)}>Edit</button>
       </div>
       <div className="tripBody">
         <div>
