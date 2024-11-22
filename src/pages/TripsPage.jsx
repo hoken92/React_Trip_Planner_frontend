@@ -10,7 +10,9 @@ export default function TripsPage({ setTrip }) {
 
   useEffect(() => {
     const getTrips = async function () {
-      const response = await axios.get("http://localhost:3000/api/trips");
+      const response = await axios.get(
+        "https://react-trip-planner-backend.onrender.com/api/trips"
+      );
 
       setTrips(response.data);
     };
@@ -27,7 +29,7 @@ export default function TripsPage({ setTrip }) {
   // Delete a trip
   async function handleDelete(trip) {
     const response = await axios.delete(
-      `http://localhost:3000/api/trips/${trip._id}`
+      `https://react-trip-planner-backend.onrender.com/api/trips/${trip._id}`
     );
     console.log(response.data);
     alert(`Deleted ${response.data.name}`);

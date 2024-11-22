@@ -21,7 +21,7 @@ export default function DepartFlightsPage({
     setLoading(true);
     const getFlights = async () => {
       const res = await axios.get(
-        `http://localhost:3000/api/flights?originLocationCode=${flightRequestData.originLocationCode}&destinationLocationCode=${flightRequestData.destinationLocationCode}&departureDate=${flightRequestData.departureDate}&returnDate=${flightRequestData.returnDate}&adults=${flightRequestData.adults}`
+        `https://react-trip-planner-backend.onrender.com/api/flights?originLocationCode=${flightRequestData.originLocationCode}&destinationLocationCode=${flightRequestData.destinationLocationCode}&departureDate=${flightRequestData.departureDate}&returnDate=${flightRequestData.returnDate}&adults=${flightRequestData.adults}`
       );
       setFlights(...flights, res.data);
     };

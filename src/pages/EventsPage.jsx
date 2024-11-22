@@ -19,7 +19,9 @@ export default function EventsPage({
   // Retrieves all static events from the DB on load
   useEffect(() => {
     const getEvents = async () => {
-      const res = await axios.get("http://localhost:3000/api/events");
+      const res = await axios.get(
+        "https://react-trip-planner-backend.onrender.com/api/events"
+      );
       setEvents(...events, res.data);
     };
     getEvents();

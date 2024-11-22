@@ -46,7 +46,10 @@ export default function Confirmation({
   // Handle submit
   async function handleSubmit() {
     try {
-      await axios.post("http://localhost:3000/api/trips", requestBody);
+      await axios.post(
+        "https://react-trip-planner-backend.onrender.com/api/trips",
+        requestBody
+      );
 
       navigate("/trips");
     } catch (err) {

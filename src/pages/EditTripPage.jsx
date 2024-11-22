@@ -17,7 +17,10 @@ export default function EditTripPage({ trip }) {
   async function submitEdit(e) {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/api/trips/${trip._id}`, tripData);
+      await axios.put(
+        `https://react-trip-planner-backend.onrender.com/api/trips/${trip._id}`,
+        tripData
+      );
       navigate("/trips");
     } catch (err) {
       console.log(err);
