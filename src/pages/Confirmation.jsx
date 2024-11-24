@@ -63,8 +63,8 @@ export default function Confirmation({
   }
 
   return (
-    <>
-      <h1>Confirmation</h1>
+    <main>
+      <h1 id="title">Confirmation</h1>
       {/* If request body is not null, display the items on the page */}
       {requestBody ? (
         <div>
@@ -134,6 +134,6 @@ export default function Confirmation({
           </button>
         </div>
       ) : null}
-    </>
+    </main>
   );
 }

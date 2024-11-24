@@ -43,8 +43,8 @@ export default function DepartFlightsPage({
   };
 
   return (
-    <>
-      <h1>Departing Flights</h1>
+    <main>
+      <h1 id="title">Departing Flights</h1>
       <Flightheader flightRequestData={flightRequestData} />
       <DepartingFlightItem
         loading={loading}
@@ -56,6 +56,6 @@ export default function DepartFlightsPage({
         totalFlights={flights.length}
         paginate={paginate}
       />
-    </>
+    </main>
   );
 }

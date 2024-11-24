@@ -28,8 +28,8 @@ export default function ReturnFlightsPage({
   };
 
   return (
-    <>
-      <h1>Returning Flights</h1>
+    <main>
+      <h1 id="title">Returning Flights</h1>
       <Flightheader flightRequestData={flightRequestData} />
       <ReturningFlightitem
         flights={currentFlights}
@@ -40,6 +40,6 @@ export default function ReturnFlightsPage({
         totalFlights={flights.length}
         paginate={paginate}
       />
-    </>
+    </main>
   );
 }

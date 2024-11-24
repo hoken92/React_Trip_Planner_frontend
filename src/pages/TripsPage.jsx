@@ -37,19 +37,21 @@ export default function TripsPage({ setTrip }) {
 
   return (
     <main>
-      <h1>My Trips</h1>
-      {trips
-        ? trips.map((trip, i) => {
-            return (
-              <TripItem
-                key={i}
-                trip={trip}
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-              />
-            );
-          })
-        : null}
+      <h1 id="title">My Trips</h1>
+      {trips ? (
+        trips.map((trip, i) => {
+          return (
+            <TripItem
+              key={i}
+              trip={trip}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+            />
+          );
+        })
+      ) : (
+        <h3>You have no current trips.</h3>
+      )}
     </main>
   );
 }

@@ -1,6 +1,6 @@
 export default function Flightheader({ flightRequestData }) {
   return (
-    <div>
+    <div className="flight-header">
       <h2>
         {flightRequestData.originLocationCode} to{" "}
         {flightRequestData.destinationLocationCode}

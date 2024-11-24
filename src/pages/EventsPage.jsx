@@ -62,53 +62,57 @@ export default function EventsPage({
   }
 
   return (
-    <>
-      <h1>Events</h1>
-      <div>
-        <form onSubmit={submitEvent}>
-          <select name="" id="" onChange={handleChange}>
-            <option value="">Select One</option>
-            {events.map((event) => {
-              return (
-                <option key={event._id} value={event.location.cityCode}>
-                  {event.event_name}
-                </option>
-              );
-            })}
-          </select>
-          <button>Search Flights</button>
-        </form>
-        {/* If an event is chosen, will display the event information */}
+    <main>
+      <h1 id="title">Events</h1>
+      <div id="container">
+        <div id="form-container">
+          <form onSubmit={submitEvent} id="event-form">
+            <select name="" id="form-dropdown" onChange={handleChange}>
+              <option value="">Select One</option>
+              {events.map((event) => {
+                return (
+                  <option key={event._id} value={event.location.cityCode}>
+                    {event.event_name}
+                  </option>
+                );
+              })}
+            </select>
+            <button>Search Flights</button>
+          </form>
+          {/* If an event is chosen, will display the event information */}
+          {isSelected ? (
+            <div>
+              <p>
+                <b>Event: </b>
+                <br />
+                {selectedEvent[0].event_name}
+              </p>
+              <p>
+                <b>Event Location: </b>
+                <br /> {selectedEvent[0].location.city}
+              </p>
+              <p>
+                <b>Event Start Date: </b> <br />
+                {new Date(selectedEvent[0].event_date.start).toDateString()}
+              </p>
+              <p>
+                <b>Event End Date :</b> <br />
+                {new Date(selectedEvent[0].event_date.end).toDateString()}
+              </p>
+            </div>
+          ) : null}
+        </div>
+        {/* If an event is chosen, will display the event line up poster */}
         {isSelected ? (
-          <div>
-            <p>
-              <b>Event: </b>
-              {selectedEvent[0].event_name}
-            </p>
-            <p>
-              <b>Event Location: </b> {selectedEvent[0].location.city}
-            </p>
-            <p>
-              <b>Event Start Date: </b>
-              {new Date(selectedEvent[0].event_date.start).toDateString()}
-            </p>
-            <p>
-              <b>Event End Date :</b>
-              {new Date(selectedEvent[0].event_date.end).toDateString()}
-            </p>
+          <div id="poster-container">
+            <img
+              className="event_poster"
+              src={selectedEvent[0].poster}
+              alt={selectedEvent[0].event_name}
+            />
           </div>
         ) : null}
       </div>
-      {/* If an event is chosen, will display the event line up poster */}
-      {isSelected ? (
-        <div>
-          <img
-            className="event_poster"
-            src={selectedEvent[0].poster}
-            alt={selectedEvent[0].event_name}
-          />
-        </div>
-      ) : null}
-    </>
+    </main>
   );
 }

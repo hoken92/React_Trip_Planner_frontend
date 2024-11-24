@@ -10,7 +10,7 @@ export default function DepartingFlightItem({
   }
 
   return (
-    <div>
+    <div className="flight-item">
       {flights.map((flight) => {
         return (
           <div key={flight.id}>
