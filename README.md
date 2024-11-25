@@ -78,7 +78,8 @@
 
 ## About The Project
 
-[Trip Planner](./src/assets//image.png)
+[Trip Planner]()
+<img src="./src/assets/image.png" alt="website image" />
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -130,9 +131,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+- On the home page, there are upcoming music festival events in 2025. We have supplied a list in the dropdown.
+- After you have chosen a festival, you can then search for flights with the same dates as the event.
+- After you have chose both departure and returning flights, you are asked to confirm the trip collection.
+- Finally, you can view all trips in the My trips section.
+  - Additionaly, you can edit your trips information or delete them.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,6 +143,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
+- [ ] Allow more edit options for trip information
 - [ ] Allow selection for departure location
 - [ ] Add flight filtering
 - [ ] Add Hotels
