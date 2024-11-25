@@ -28,9 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/hoken92/React_Trip_Planner_frontend">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+  <a href="https://fastidious-youtiao-d4391f.netlify.app/">Website</a>
 
 <h3 align="center">Trip Planner</h3>
 
