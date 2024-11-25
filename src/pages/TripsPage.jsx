@@ -17,7 +17,7 @@ export default function TripsPage({ setTrip }) {
       setTrips(response.data);
     };
     getTrips();
-  }, []);
+  });
 
   // Navigate user to the edit page to edit a trip
   async function handleEdit(trip) {

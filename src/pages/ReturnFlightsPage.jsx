@@ -10,7 +10,7 @@ export default function ReturnFlightsPage({
   setnewReturningFlight,
 }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [flightsPerPage] = useState(1);
+  const [flightsPerPage] = useState(10);
 
   const navigate = useNavigate();
 

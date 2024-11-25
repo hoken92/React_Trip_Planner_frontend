@@ -9,12 +9,11 @@ import DepartFlightsPage from "./pages/DepartFlightsPage.jsx";
 import ReturnFlightsPage from "./pages/ReturnFlightsPage.jsx";
 import Confirmation from "./pages/Confirmation.jsx";
 import EditTripPage from "./pages/EditTripPage.jsx";
-import { flightdata } from "../data/flights.js";
 
 function App() {
   const [selectedEvent, setSelectedEvent] = useState("");
   const [flightRequestData, setFlightRequestData] = useState({});
-  const [flights, setFlights] = useState(flightdata);
+  const [flights, setFlights] = useState(null);
   const [newDepartingFlight, setNewDepartingFlight] = useState({});
   const [newReturningFlight, setnewReturningFlight] = useState({});
   const [trip, setTrip] = useState(null);

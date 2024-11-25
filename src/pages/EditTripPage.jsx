@@ -29,7 +29,7 @@ export default function EditTripPage({ trip }) {
   return (
     <main>
       <h1 id="title">Edit your Trips</h1>
-      <div>
+      <div className="trip-item">
         <form onSubmit={submitEdit}>
           <label htmlFor="name">
             Name:
@@ -41,7 +41,7 @@ export default function EditTripPage({ trip }) {
               onChange={handleFormDataChange}
             />
           </label>
-          <button>Submit Changes</button>
+          <button className="item-btn">Submit Changes</button>
         </form>
       </div>
     </main>

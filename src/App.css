@@ -322,7 +322,7 @@ main {
   touch-action: manipulation;
   will-change: transform;
   position: relative;
-  right: -65px;
+  right: -15px;
 }
 
 .delete-btn:hover {
