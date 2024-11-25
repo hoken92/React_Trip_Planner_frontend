@@ -115,9 +115,10 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm install
    ```
-4. If you'd like your own backend calls to Amadeus, Enter your API key and secret in a `.env`
+4. If you'd like your own backend calls to Amadeus, Enter your API key and secret in a `.env` for your own backend
    ```js
-   const API_KEY = "ENTER YOUR API";
+   const API_KEY = "ENTER YOUR API KEY";
+   const API_SECRET = "ENTER YOUR API SECRET";
    ```
 5. Change git remote url to avoid accidental pushes to base project
    ```sh
