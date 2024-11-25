@@ -96,7 +96,7 @@ export default function EventsPage({
                 {new Date(selectedEvent[0].event_date.start).toDateString()}
               </p>
               <p>
-                <b>Event End Date :</b> <br />
+                <b>Event End Date: </b> <br />
                 {new Date(selectedEvent[0].event_date.end).toDateString()}
               </p>
             </div>
@@ -105,11 +105,13 @@ export default function EventsPage({
         {/* If an event is chosen, will display the event line up poster */}
         {isSelected ? (
           <div id="poster-container">
-            <img
-              className="event_poster"
-              src={selectedEvent[0].poster}
-              alt={selectedEvent[0].event_name}
-            />
+            <a href={selectedEvent[0].poster} target="_blank">
+              <img
+                className="event_poster"
+                src={selectedEvent[0].poster}
+                alt={selectedEvent[0].event_name}
+              />
+            </a>
           </div>
         ) : null}
       </div>
