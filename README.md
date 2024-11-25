@@ -28,9 +28,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/hoken92/React_Trip_Planner_frontend">
+  <!-- <a href="https://github.com/hoken92/React_Trip_Planner_frontend">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">Trip Planner</h3>
 
@@ -78,7 +78,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](./src/assets/image.png)
+[![Trip Planner][./src/assets/image.png]]()
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
