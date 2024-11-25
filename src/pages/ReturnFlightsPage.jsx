@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Flightheader from "../components/FlightHeader.jsx";
+import ReturningFlightHeader from "../components/ReturningFlightHeader.jsx";
 import ReturningFlightitem from "../components/ReturningFlightItem.jsx";
 import Pagination from "../components/Pagination.jsx";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +30,7 @@ export default function ReturnFlightsPage({
   return (
     <main>
       <h1 id="title">Returning Flights</h1>
-      <Flightheader flightRequestData={flightRequestData} />
+      <ReturningFlightHeader flightRequestData={flightRequestData} />
       <ReturningFlightitem
         flights={currentFlights}
         submitFlight={submitFlight}

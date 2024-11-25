@@ -10,17 +10,18 @@ export default function DepartingFlightItem({
   }
 
   return (
-    <div className="flight-item">
+    <div className="flight-container">
       {flights.map((flight) => {
         return (
-          <div key={flight.id}>
-            <div>
-              <p>
+          <div key={flight.id} className="flight-item">
+            <div className="item-airports">
+              <h4>
+                <b>Depart: </b>
                 {flight.itineraries[0].segments[0].departure.iataCode} to{" "}
                 {flight.itineraries[0].segments[0].arrival.iataCode}
-              </p>
+              </h4>
             </div>
-            <div>
+            <div className="item-dates">
               <p>
                 <b>Flight Duration: </b>
                 {flight.itineraries[0].duration}
@@ -30,18 +31,24 @@ export default function DepartingFlightItem({
                 {format(
                   flight.itineraries[0].segments[0].departure.at,
                   "yyyy/MM//dd p"
-                )}{" "}
-                -<b>Arrival Time:</b>{" "}
+                )}
+              </p>
+              <p>
+                <b>Arrival Time:</b>{" "}
                 {format(
                   flight.itineraries[0].segments[0].arrival.at,
                   "yyyy/MM//dd p"
                 )}
               </p>
             </div>
-            <div>
-              <p>Price: ${flight.price.total}</p>
+            <div className="item-prices">
+              <p>
+                <b>Price: </b> ${flight.price.total}
+              </p>
             </div>
-            <button onClick={() => selectFlight(flight)}>Select</button>
+            <button className="item-btn" onClick={() => selectFlight(flight)}>
+              Select
+            </button>
           </div>
         );
       })}

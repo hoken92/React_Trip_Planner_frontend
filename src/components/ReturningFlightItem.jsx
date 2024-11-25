@@ -5,14 +5,15 @@ export default function ReturningFlightitem({ flights, submitFlight }) {
     <div>
       {flights.map((flight) => {
         return (
-          <div key={flight.id}>
+          <div key={flight.id} className="flight-item">
             <div>
-              <p>
+              <h4>
+                <b>Returning: </b>
                 {flight.itineraries[1].segments[0].departure.iataCode} to{" "}
                 {flight.itineraries[1].segments[0].arrival.iataCode}
-              </p>
+              </h4>
             </div>
-            <div>
+            <div className="item-dates">
               <p>
                 <b>Flight Duration: </b>
                 {flight.itineraries[1].duration}
@@ -30,10 +31,12 @@ export default function ReturningFlightitem({ flights, submitFlight }) {
                 )}
               </p>
             </div>
-            <div>
+            <div className="item-prices">
               <p>Price: ${flight.price.total}</p>
             </div>
-            <button onClick={() => submitFlight(flight)}>Select</button>
+            <button className="item-btn" onClick={() => submitFlight(flight)}>
+              Select
+            </button>
           </div>
         );
       })}
