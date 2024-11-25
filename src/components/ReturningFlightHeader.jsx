@@ -5,7 +5,7 @@ export default function ReturningFlightHeader({ flightRequestData }) {
         {flightRequestData.destinationLocationCode} to{" "}
         {flightRequestData.originLocationCode}
       </h2>
-      <h2>{flightRequestData.departureDate}</h2>
+      <h2>{flightRequestData.returnDate}</h2>
     </div>
   );
 }

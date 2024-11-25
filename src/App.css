@@ -210,7 +210,9 @@ main {
   text-align: right;
 }
 
-.item-btn {
+.item-btn,
+#cancelBtn,
+#submitBtn {
   height: 50px;
   background-color: #c9ada7;
   border: 2px solid #9a8c98;
@@ -227,14 +229,61 @@ main {
   will-change: transform;
 }
 
-.item-btn:hover {
+.item-btn:hover,
+#submitBtn:hover,
+#cancelBtn:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
   color: #c9ada7;
   background-color: #4a4e69;
 }
 
-.item-btn:active {
+.item-btn:active,
+#submitBtn:active,
+#cancelBtn:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+#confirmation-container {
+  border: 2px solid #9a8c98;
+  width: 85%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  margin: 0 auto 15px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: auto;
+}
+
+.trip-item {
+  border: 2px solid #9a8c98;
+  width: 85%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  margin: 25px auto 10px auto;
+}
+
+.tripHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 2px solid #9a8c98;
+  padding: 15px;
+}
+
+.tripBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.edit-btn {
+}
+
+.delete-btn {
 }

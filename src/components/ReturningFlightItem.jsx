@@ -24,7 +24,9 @@ export default function ReturningFlightitem({ flights, submitFlight }) {
                   flight.itineraries[1].segments[0].departure.at,
                   "yyyy/MM//dd p"
                 )}{" "}
-                -<b>Arrival Time:</b>{" "}
+              </p>
+              <p>
+                <b>Arrival Time:</b>{" "}
                 {format(
                   flight.itineraries[1].segments[0].arrival.at,
                   "yyyy/MM//dd p"

@@ -2,16 +2,18 @@ import { format } from "date-fns";
 
 export default function TripItem({ trip, handleEdit, handleDelete }) {
   return (
-    <div key={trip._id}>
+    <div key={trip._id} className="trip-item">
       <div className="tripHeader">
-        <h3>{trip.name}</h3>
-        <h3>Departing Flight</h3>
-        <h3>Returning Flight</h3>
-        <h3>
+        <h4>{trip.name}</h4>
+        <h4>Departing Flight</h4>
+        <h4>Returning Flight</h4>
+        <h4>
           {format(trip.event_info.start_date, "yyyy/MM/dd")} -{" "}
           {format(trip.event_info.end_date, "yyyy/MM/dd")}
-        </h3>
-        <button onClick={() => handleEdit(trip)}>Edit</button>
+        </h4>
+        <button className="edit-btn" onClick={() => handleEdit(trip)}>
+          Edit
+        </button>
       </div>
       <div className="tripBody">
         <div>
@@ -39,7 +41,7 @@ export default function TripItem({ trip, handleEdit, handleDelete }) {
           <p>{trip.return_flight_info.price}</p>
         </div>
         <div>
-          <button onClick={() => handleDelete(trip)} id="cancelTrip">
+          <button className="delete-btn" onClick={() => handleDelete(trip)}>
             Cancel Trip
           </button>
         </div>

@@ -67,7 +67,7 @@ export default function Confirmation({
       <h1 id="title">Confirmation</h1>
       {/* If request body is not null, display the items on the page */}
       {requestBody ? (
-        <div>
+        <div id="confirmation-container">
           <div>
             <h3>Event:</h3>
             <p>{requestBody.event_info.name}</p>
