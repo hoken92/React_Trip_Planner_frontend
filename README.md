@@ -35,7 +35,7 @@
   <p align="center">
     A Trip planner that lets you select music fesitval events and find flights to and from locations.
     <br />
-    <a href="https://github.com/hoken92/React_Trip_Planner_frontend"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/hoken92/React_Trip_Planner_backend"><strong>Explore the Backend »</strong></a>
     <br />
     <br />
     <a href="https://fastidious-youtiao-d4391f.netlify.app/">View Demo</a>
